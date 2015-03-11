@@ -1,0 +1,27 @@
+<div class="zone1 left">
+  <h1 class="my-title">Title</h1>
+
+  <p>Paragraph text</p>
+
+  <table class="my-table">
+    <tr>
+      <td>
+        T1
+      </td>
+      <td>
+        T2
+      </td>
+    </tr>
+  </table>
+</div>
+====================================
+
+%div.zone1.left
+  %h1.my-title Title
+  %p Paragraph text
+  %table.my-table
+    %tr
+      %td T1
+      %td T2
+      
+

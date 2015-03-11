@@ -1,0 +1,10 @@
+%h1 
+  Edit Blind
+  - @blinds.name
+  
+= simple_form_for @blinds, url: {action: "update", id: @blinds.id}, method: `post` do |f|
+  = f.input :name
+  = f.input :priority
+  = f.button :submit
+
+%p= link_to "Back", action: "index"

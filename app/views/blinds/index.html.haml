@@ -1,0 +1,14 @@
+%h1 Blinds
+
+%table
+  %tr
+    %th Name
+    %th Edit
+    %th Delete
+  - for blind in @blinds
+    %tr
+      %td= blind.name
+      %td= link_to "Edit", {action: "edit", id: blind.id}
+      %td= link_to "Delete", {action: "delete", id: blind.id}, method: :post
+      
+%p= link_to "New Blind", action: "new"

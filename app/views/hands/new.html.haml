@@ -1,0 +1,10 @@
+%h1 New Hand
+
+= simple_form_for @hands do |f|
+  = f.input :name
+  = f.input :priority
+  = f.input :position
+  = f.input :bb
+  = f.button :submit
+
+%p= link_to "Back", action: "index"

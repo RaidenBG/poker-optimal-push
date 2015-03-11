@@ -1,0 +1,12 @@
+%h1 
+  Edit Hand
+  - @hands.name
+  
+= simple_form_for @hands, url: {action: "update", id: @hands.id}, method: `post` do |f|
+  = f.input :name
+  = f.input :priority
+  = f.input :position
+  = f.input :bb
+  = f.button :submit
+
+%p= link_to "Back", action: "index"

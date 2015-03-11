@@ -1,0 +1,37 @@
+%h1 Positions
+
+=@p1.name
+%br
+=@p1.priority
+
+%br
+
+=@p2.name
+%br
+=@p2.priority
+
+%br
+
+=@all_positions.first.name
+%br
+=@all_positions.first.priority
+%br
+=@all_positions.second.name
+%br
+=@all_positions.second.priority
+
+%hr
+
+- @all_positions.each do |position|
+  = position.name
+  %br
+  = position.priority
+  %br
+
+
+
+- for position in @all_positions do
+  = position.name
+  %br
+  = position.priority
+  %br

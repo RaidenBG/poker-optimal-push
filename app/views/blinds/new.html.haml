@@ -1,0 +1,8 @@
+%h1 New Blind
+
+= simple_form_for @blinds do |f|
+  = f.input :name
+  = f.input :priority
+  = f.button :submit
+
+%p= link_to "Back", action: "index"

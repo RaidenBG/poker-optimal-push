@@ -1,0 +1,10 @@
+%h1 
+  Edit Positon
+  - @position.name
+  
+= simple_form_for @position, url: {action: "update", id: @position.id}, method: `post` do |f|
+  = f.input :name
+  = f.input :priority
+  = f.button :submit
+
+%p= link_to "Back", action: "index"
