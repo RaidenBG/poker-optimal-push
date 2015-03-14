@@ -1,12 +1,17 @@
-%h1 
-  Edit Hand
-  - @hands.name
-  
-= simple_form_for @hands, url: {action: "update", id: @hands.id}, method: `post` do |f|
-  = f.input :name
-  = f.input :priority
-  = f.input :position
-  = f.input :bb
-  = f.button :submit
+.row
+  .col-md-4.col-md-offset-4
 
-%p= link_to "Back", action: "index"
+    %h1 Редактирай ръка
+    - @hand.name
+    .well
+      = simple_form_for(@hand, html: { class: 'form-horizontal form-new-edit' }, url: {action: "update", id: @hand.id}, method: `post`) do |f|
+        %fieldset
+          = f.input :name
+          = f.input :priority
+          = f.association :position
+          = f.association :blind
+                   
+          
+          %p.buttons
+            = f.button :submit, class: "btn btn-primary"
+            = link_to "Back", {action: "index"}, class: "btn btn-default"

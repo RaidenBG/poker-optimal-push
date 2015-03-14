@@ -1,14 +1,18 @@
-%h1 Positions
+.row
+  .col-md-2.col-md-offset-5
 
-%table
-  %tr
-    %th Name
-    %th Edit
-    %th Delete
-  - for position in @positions
-    %tr
-      %td= position.name
-      %td= link_to "Edit", {action: "edit", id: position.id}
-      %td= link_to "Delete", {action: "delete", id: position.id}, method: :post
-      
-%p= link_to "New Position", action: "new"
+    %h1 Позиции
+    %table.table.table-striped.table-bordered.table-hover
+
+      %tr
+        %th Име
+        %th Действия
+        
+      - for position in @positions
+        %tr
+          %td= position.name
+          %td
+            = link_to raw('<span class="glyphicon glyphicon-pencil"></span> Промени'), {action: "edit", id: position.id}, class: "btn btn-warning btn-xs"
+            = link_to raw('<span class="glyphicon glyphicon-trash"></span> Изтрий'), {action: "delete", id: position.id}, method: :post, class: "btn btn-danger btn-xs"
+
+    %p= link_to raw('<span class="glyphicon glyphicon-plus"></span> Нова Позиция'), {action: "new"}, class: "btn btn-primary"

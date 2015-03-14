@@ -5,34 +5,38 @@ class HandsController < ApplicationController
   end
   
   def new
-    @hands = Hand.new
+    @hand = Hand.new
   end
   
   def create
-    hands = Hand.new 
-    hands.name = params[:hand]["name"]
-    hands.priority = params[:hand]["priority"]
-    hands.save
+    hand = Hand.new 
+    hand.name = params[:hand]["name"]
+    hand.priority = params[:hand]["priority"]
+    hand.position_id = params[:hand]["position_id"]
+    hand.blind_id = params[:hand]["blind_id"]
+    hand.save
     
     redirect_to action: "index"
   end
   
   def edit
-    @hands = Hand.find(params["id"])
+    @hand = Hand.find(params["id"])
   end
   
   def update
-    hands = Hand.find(params["id"])
-    hands.name = params[:hand]["name"]
-    hands.priority = params[:hand]["priority"]
-    hands.save
+    hand = Hand.find(params["id"])
+    hand.name = params[:hand]["name"]
+    hand.priority = params[:hand]["priority"]
+    hand.position_id = params[:hand]["position_id"]
+    hand.blind_id = params[:hand]["blind_id"]
+    hand.save
     
     redirect_to action: "index"
   end
   
   def delete
-    hands = Hand.find(params["id"])
-    hands.destroy
+    hand = Hand.find(params["id"])
+    hand.destroy
     
     redirect_to action: "index"
   end

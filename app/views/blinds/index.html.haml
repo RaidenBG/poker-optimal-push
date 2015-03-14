@@ -1,14 +1,18 @@
-%h1 Blinds
+.row
+  .col-md-2.col-md-offset-5
 
-%table
-  %tr
-    %th Name
-    %th Edit
-    %th Delete
-  - for blind in @blinds
-    %tr
-      %td= blind.name
-      %td= link_to "Edit", {action: "edit", id: blind.id}
-      %td= link_to "Delete", {action: "delete", id: blind.id}, method: :post
-      
-%p= link_to "New Blind", action: "new"
+    %h1 Блайндове
+    %table.table.table-striped.table-bordered.table-hover
+    
+      %tr
+        %th Брой
+        %th Действия
+        
+      - for blind in @blinds
+        %tr
+          %td= blind.name
+          %td
+            = link_to raw('<span class="glyphicon glyphicon-pencil"></span> Промени'), {action: "edit", id: blind.id}, class: "btn btn-warning btn-xs"
+            = link_to raw('<span class="glyphicon glyphicon-trash"></span> Изтрий'), {action: "delete", id: blind.id}, method: :post, class: "btn btn-danger btn-xs"
+
+    %p= link_to raw('<span class="glyphicon glyphicon-plus"></span> Нов Блайнд'), {action: "new"}, class: "btn btn-primary"

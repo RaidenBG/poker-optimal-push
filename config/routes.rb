@@ -7,31 +7,22 @@ Rails.application.routes.draw do
   
   get "positions" => "positions#index"
   get "positions/new" => "positions#new"
-  
   post "positions" => "positions#create"
-  
   get "positions/edit/:id" => "positions#edit"
-  
-  post "positions/update/:id" => "positions#update"
+  post "positions/updateHand/:id" => "positions#update"
   post "positions/delete/:id" => "positions#delete"
   
   get "blinds" => "blinds#index"
   get "blinds/new" => "blinds#new"
-  
   post "blinds" => "blinds#create"
-  
   get "blinds/edit/:id" => "blinds#edit"
-  
   post "blinds/update/:id" => "blinds#update"
   post "blinds/delete/:id" => "blinds#delete"
   
   get "hands" => "hands#index"
   get "hands/new" => "hands#new"
-  
   post "hands" => "hands#create"
-  
   get "hands/edit/:id" => "hands#edit"
-  
   post "hands/update/:id" => "hands#update"
   post "hands/delete/:id" => "hands#delete"
   

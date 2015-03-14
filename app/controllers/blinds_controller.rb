@@ -5,34 +5,34 @@ class BlindsController < ApplicationController
   end
   
   def new
-    @blinds = Blind.new
+    @blind = Blind.new
   end
   
   def create
-    blinds = Blind.new 
-    blinds.name = params[:blind]["name"]
-    blinds.priority = params[:blind]["priority"]
-    blinds.save
+    blind = Blind.new 
+    blind.name = params[:blind]["name"]
+    blind.priority = params[:blind]["priority"]
+    blind.save
     
     redirect_to action: "index"
   end
   
   def edit
-    @blinds = Blind.find(params["id"])
+    @blind = Blind.find(params["id"])
   end
   
   def update
-    blinds = Blind.find(params["id"])
-    blinds.name = params[:blind]["name"]
-    blinds.priority = params[:blind]["priority"]
-    blinds.save
+    blind = Blind.find(params["id"])
+    blind.name = params[:blind]["name"]
+    blind.priority = params[:blind]["priority"]
+    blind.save
     
     redirect_to action: "index"
   end
   
   def delete
-    blinds = Blind.find(params["id"])
-    blinds.destroy
+    blind = Blind.find(params["id"])
+    blind.destroy
     
     redirect_to action: "index"
   end

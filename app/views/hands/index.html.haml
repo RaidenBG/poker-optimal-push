@@ -1,14 +1,22 @@
-%h1 Hands
+.row
+  .col-md-8.col-md-offset-2
 
-%table
-  %tr
-    %th Name
-    %th Edit
-    %th Delete
-  - for hand in @hands
-    %tr
-      %td= blind.name
-      %td= link_to "Edit", {action: "edit", id: hand.id}
-      %td= link_to "Delete", {action: "delete", id: hand.id}, method: :post
-      
-%p= link_to "New Hand", action: "new"
+    %h1 Ръце
+
+    %table.table.table-striped.table-bordered.table-hover
+      %tr
+        %th Позиция
+        %th Блайндове
+        %th Ръка
+        %th Действия
+        
+      - for hand in @hands
+        %tr
+          %td= hand.position.name
+          %td= hand.blind.name
+          %td= hand.name
+          %td
+            = link_to raw('<span class="glyphicon glyphicon-pencil"></span> Промени'), {action: "edit", id: hand.id}, class: "btn btn-warning btn-xs"
+            = link_to raw('<span class="glyphicon glyphicon-trash"></span> Изтрий'), {action: "delete", id: hand.id}, method: :post, class: "btn btn-danger btn-xs"
+
+    %p= link_to raw('<span class="glyphicon glyphicon-plus"></span> Нова Ръка'), {action: "new"}, class: "btn btn-primary"

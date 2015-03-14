@@ -1,8 +1,14 @@
-%h1 New Blind
+.row
+  .col-md-4.col-md-offset-4
 
-= simple_form_for @blinds do |f|
-  = f.input :name
-  = f.input :priority
-  = f.button :submit
-
-%p= link_to "Back", action: "index"
+    %h1 Нов блайнд
+    .well
+      = simple_form_for(@blind, html: { class: 'form-horizontal form-new-edit' }) do |f|
+        %fieldset
+          = f.input :name, placeholder: 'Въведете блайнд ...'
+          = f.input :priority, placeholder: 'Въведете приоритет ...'
+                   
+          
+          %p.buttons
+            = f.button :submit, class: "btn btn-primary"
+            = link_to "Back", {action: "index"}, class: "btn btn-default"
