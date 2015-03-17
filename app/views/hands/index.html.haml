@@ -1,7 +1,7 @@
 .row
   .col-md-8.col-md-offset-2
 
-    %h1 Ръце
+    %h1 Диапазони
 
     %table.table.table-striped.table-bordered.table-hover
       %tr
@@ -12,11 +12,11 @@
         
       - for hand in @hands
         %tr
-          %td= hand.position.name
-          %td= hand.blind.name
+          %td= hand.position.name if hand.position
+          %td= hand.blind.name if hand.blind
           %td= hand.name
           %td
             = link_to raw('<span class="glyphicon glyphicon-pencil"></span> Промени'), {action: "edit", id: hand.id}, class: "btn btn-warning btn-xs"
             = link_to raw('<span class="glyphicon glyphicon-trash"></span> Изтрий'), {action: "delete", id: hand.id}, method: :post, class: "btn btn-danger btn-xs"
 
-    %p= link_to raw('<span class="glyphicon glyphicon-plus"></span> Нова Ръка'), {action: "new"}, class: "btn btn-primary"
+    %p= link_to raw('<span class="glyphicon glyphicon-plus"></span> Нов Диапазон'), {action: "new"}, class: "btn btn-primary"
