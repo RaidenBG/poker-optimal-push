@@ -1,0 +1,25 @@
+.row
+  .col-md-10.col-md-offset-1
+    %h1 BB Push
+    
+    %h4 Моля изберете позиция и брой блайндове:
+        
+    %p
+      .btn-group{:role=> "group"}
+        - for position in @positions
+          = link_to position.name, {action: "index", position: position.id}, class: "btn btn-default"
+          
+    %p
+      .btn-group{:role=> "group"}
+        - for blind in @blinds
+          = link_to blind.name, {action: "index", blind: blind.id}, class: "btn btn-default"
+      
+    %p
+      Избраната позиция е:
+      = @current_position.name if @current_position
+    %p
+      Избраният брой блайндове е:
+      = @current_blind.name if @current_blind
+    %p 
+      Диапазонът от ръце за тази комбинация е:
+      = @current_hand.name if @current_hand

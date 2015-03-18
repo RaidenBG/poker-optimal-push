@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'bb_push/index'
+
   get "demotest" => "test2#demotest"
   get "calculations" => "test2#calculations"
   
@@ -19,12 +21,16 @@ Rails.application.routes.draw do
   post "blinds/update/:id" => "blinds#update"
   post "blinds/delete/:id" => "blinds#delete"
   
-  get "hands" => "hands#index"
+    get "hands" => "hands#index"
   get "hands/new" => "hands#new"
   post "hands" => "hands#create"
   get "hands/edit/:id" => "hands#edit"
   post "hands/update/:id" => "hands#update"
   post "hands/delete/:id" => "hands#delete"
+  
+  get "bb_push" => "bb_push#index"
+  
+  root 'bb_push#index'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,2 @@
+module BbPushHelper
+end
