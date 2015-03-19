@@ -7,19 +7,20 @@
     %p
       .btn-group{:role=> "group"}
         - for position in @positions
-          = link_to position.name, {action: "index", position: position.id}, class: "btn btn-default"
+          - if @current_position && @current_position.id == position.id
+            = link_to position.name, {action: "index", position: position.id}, class: "btn btn-default active"
+          - else 
+            = link_to position.name, {action: "index", position: position.id}, class: "btn btn-default"
           
     %p
       .btn-group{:role=> "group"}
         - for blind in @blinds
-          = link_to blind.name, {action: "index", blind: blind.id}, class: "btn btn-default"
-      
-    %p
-      Избраната позиция е:
-      = @current_position.name if @current_position
-    %p
-      Избраният брой блайндове е:
-      = @current_blind.name if @current_blind
-    %p 
-      Диапазонът от ръце за тази комбинация е:
-      = @current_hand.name if @current_hand
+          - if @current_blind && @current_blind.id == blind.id
+            = link_to blind.name, {action: "index", blind: blind.id}, class: "btn btn-default active"
+          - else
+            = link_to blind.name, {action: "index", blind: blind.id}, class: "btn btn-default"
+    
+    .jumbotron.spaced
+      %h4Диапазонът от ръце, с които трябва да пушвате при тази комбинация е:
+    .label-danger
+      %h3= @current_hand.name if @current_hand
