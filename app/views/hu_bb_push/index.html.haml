@@ -1,0 +1,23 @@
+.row
+  .col-md-10.col-md-offset-1
+    %h1 HU BB Push/Call
+    
+    %h4 Моля изберете брой блайндове:
+          
+    %p
+      .btn-group{:role=> "group"}
+        - for blind in @blinds
+          - if @current_blind && @current_blind.id == blind.id
+            = link_to blind.name, {action: "index", blind: blind.id}, class: "btn btn-default active"
+          - else
+            = link_to blind.name, {action: "index", blind: blind.id}, class: "btn btn-default"
+    
+    .jumbotron.spaced
+      %h4Диапазонът от ръце, с които трябва да пушвате при тази комбинация е:
+    .label-danger
+      %h3= @current_hand.name if @current_hand
+      
+    .jumbotron.spaced
+      %h4Диапазонът от ръце, с които трябва да колвате при тази комбинация е:
+    .label-danger
+      %h3= @current_hand_1.name if @current_hand_1

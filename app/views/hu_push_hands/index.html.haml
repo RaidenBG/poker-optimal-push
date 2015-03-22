@@ -1,0 +1,20 @@
+.row
+  .col-md-8.col-md-offset-2
+
+    %h1 Диапазони за пуш ХУ
+
+    %table.table.table-striped.table-bordered.table-hover
+      %tr
+        %th Блайндове
+        %th Ръка
+        %th Действия
+        
+      - for hand in @hands
+        %tr
+          %td= hand.blind.name if hand.blind
+          %td= hand.name
+          %td
+            = link_to raw('<span class="glyphicon glyphicon-pencil"></span> Промени'), {action: "edit", id: hand.id}, class: "btn btn-warning btn-xs"
+            = link_to raw('<span class="glyphicon glyphicon-trash"></span> Изтрий'), {action: "delete", id: hand.id}, method: :post, class: "btn btn-danger btn-xs"
+
+    %p= link_to raw('<span class="glyphicon glyphicon-plus"></span> Нов Диапазон'), {action: "new"}, class: "btn btn-primary"

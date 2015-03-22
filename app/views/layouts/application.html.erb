@@ -25,12 +25,22 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/bb_push">BB push <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">M factor push</a></li>
+        <li class="active"><a href="/bb_push">BB Push <span class="sr-only">(current)</span></a></li>
+        <li><a href="/hu_bb_push">HU Push/Call</a></li>
+        <li><a href="#">M Factor Push</a></li>
         <li class="dropdown">
           <a href="/acho.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Редакция <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="/acho.html">Диапазони</a></li>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li class="dropdown-submenu">
+              <a tabindex="-1" href="#">Диапазони</a>
+              <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">BB Push</a></li>
+                <li><a href="#">HU Push</a></li>
+                <li><a href="#">HU Call</a></li>
+                <li><a href="#">M Factor Push</a></li>
+                <li><a href="#">M Factor Call</a></li>
+              </ul>
+            </li>
             <li><a href="/acho.html">Блайндове</a></li>
             <li><a href="/acho.html">Позиции</a></li>
            </ul>

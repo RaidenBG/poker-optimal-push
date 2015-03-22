@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314082632) do
+ActiveRecord::Schema.define(version: 20150321193028) do
 
   create_table "blinds", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,22 @@ ActiveRecord::Schema.define(version: 20150314082632) do
     t.integer  "blind_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "hu_call_hands", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "priority"
+    t.integer  "blind_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hu_push_hands", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "priority"
+    t.integer  "blind_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "positions", force: :cascade do |t|

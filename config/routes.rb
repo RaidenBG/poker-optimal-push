@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   get 'bb_push/index'
-
+  get 'hu_bb_push/index'
+  get 'hu_bb_call/index'
+  
   get "demotest" => "test2#demotest"
   get "calculations" => "test2#calculations"
   
@@ -21,14 +23,29 @@ Rails.application.routes.draw do
   post "blinds/update/:id" => "blinds#update"
   post "blinds/delete/:id" => "blinds#delete"
   
-    get "hands" => "hands#index"
+  get "hands" => "hands#index"
   get "hands/new" => "hands#new"
   post "hands" => "hands#create"
   get "hands/edit/:id" => "hands#edit"
   post "hands/update/:id" => "hands#update"
   post "hands/delete/:id" => "hands#delete"
   
+  get "hu_push_hands" => "hu_push_hands#index"
+  get "hu_push_hands/new" => "hu_push_hands#new"
+  post "hu_push_hands" => "hu_push_hands#create"
+  get "hu_push_hands/edit/:id" => "hu_push_hands#edit"
+  post "hu_push_hands/update/:id" => "hu_push_hands#update"
+  post "hu_push_hands/delete/:id" => "hu_push_hands#delete"
+  
+  get "hu_call_hands" => "hu_call_hands#index"
+  get "hu_call_hands/new" => "hu_call_hands#new"
+  post "hu_call_hands" => "hu_call_hands#create"
+  get "hu_call_hands/edit/:id" => "hu_call_hands#edit"
+  post "hu_call_hands/update/:id" => "hu_call_hands#update"
+  post "hu_call_hands/delete/:id" => "hu_call_hands#delete"
+  
   get "bb_push" => "bb_push#index"
+  get "hu_bb_push" => "hu_bb_push#index"
   
   root 'bb_push#index'
   
